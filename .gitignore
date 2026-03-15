@@ -26,3 +26,6 @@ project3.pdf
 project4.pdf
 project5.pdf
 
+# Unpublished from GitHub — scripts stay local only
+github-codebase/scripts/
+

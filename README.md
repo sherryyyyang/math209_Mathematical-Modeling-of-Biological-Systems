@@ -1,5 +1,15 @@
 # MATH209 — Mathematical Modeling of Biological Systems
 
+---
+
+# 🎯 See demo here:
+
+**[→ Open the project showcase (click to view in your browser)](https://sherryyyyang.github.io/math209_Mathematical-Modeling-of-Biological-Systems/showcase-website/index.html#projects)**
+
+*If you’ve cloned the repo locally, you can also open [showcase-website/index.html](showcase-website/index.html#projects) in your browser.*
+
+---
+
 Coursework from **Quantitative Biology & Systems Modeling**, organized by project. Each project is self-contained with code (where applicable), figures, and report PDFs.
 
 ## Repository structure

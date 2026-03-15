@@ -1,15 +1,10 @@
 # Showcase website — Quantitative Biology & Systems Modeling
 
-A single-page portfolio for **Sherry Yang** with **all project figures** from the codebase displayed on the site.
+A single-page portfolio for **Sherry Yang** with **all project figures** (Projects 1–5) from the codebase.
 
 ## Quick start
 
-1. **Generate figures** (required so the site has images to show):
-   ```bash
-   cd github-codebase
-   python scripts/generate_figures.py
-   ```
-   This writes figures into `showcase-website/assets/` (and `github-codebase/outputs/`).
+1. **Figures are already in the repo** under `assets/project1/` through `assets/project5/`. No setup needed to view the site.
 
 2. **Open the site:** open `index.html` in a browser, or serve the folder:
    ```bash
@@ -21,14 +16,21 @@ A single-page portfolio for **Sherry Yang** with **all project figures** from th
 ## Contents
 
 - **Hero:** Tumor growth figure (Project 3).
-- **Project cards:** One main figure per project, plus extra panels where relevant (e.g. regression linear/quad/exp, COVID baseline & delta, TME single & R2 comparison).
-- **All figures:** Gallery at the bottom showing every generated figure with captions.
+- **Project cards (1–5):** One main figure per project, then **all** generated figures:
+  - **Scrollable strip** when a project has many figures (5+): vertical scroll within the card.
+  - **Panel** when a project has 2–4 figures: small grid.
+- **All figures:** Scrollable gallery at the bottom with captions.
 
-## Customization
+## Refreshing figures
 
-- **GitHub link:** Edit the footer `<a href="https://github.com">` to your repo.
-- **Regenerate figures:** Run `python scripts/generate_figures.py` from `github-codebase` anytime; figures are saved into `showcase-website/assets/` automatically.
+Figures are kept in both each project’s `github-codebase/<project>/outputs/` and here in `assets/project1/` … `project5/`. From the repo root run:
+
+```bash
+cd github-codebase && python scripts/generate_figures.py
+```
+
+That script writes to both the codebase `outputs/` dirs and this folder’s assets. No separate copy step.
 
 ## Deployment
 
-Upload the entire `showcase-website` folder (including `assets/` with the PNGs) to GitHub Pages, Netlify, Vercel, or any static host.
+Upload the entire `showcase-website` folder (including `assets/project1/`–`assets/project5/`) to GitHub Pages, Netlify, Vercel, or any static host. The GitHub link in the footer points to `sherryyyyang/math209_Mathematical-Modeling-of-Biological-Systems`.

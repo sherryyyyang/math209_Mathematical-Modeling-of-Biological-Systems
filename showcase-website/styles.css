@@ -191,10 +191,43 @@ body {
 
 .card-figures {
   grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
   margin-top: 0.5rem;
+}
+
+/* Scrolling strip for many figures (5+) */
+.card-figures.figures-scroll {
+  display: block;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+}
+.card-figures.figures-scroll img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.15);
+  display: block;
+  margin-bottom: 1rem;
+}
+.card-figures.figures-scroll img:last-child {
+  margin-bottom: 0;
+}
+
+/* Panel grid for 2–4 figures */
+.card-figures.figures-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+}
+.card-figures.figures-panel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.15);
 }
 
 .card-figures img {
@@ -312,4 +345,10 @@ body {
   padding: 0.75rem 1rem;
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.gallery-grid.gallery-tall {
+  max-height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }

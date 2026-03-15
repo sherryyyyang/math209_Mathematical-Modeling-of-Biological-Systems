@@ -1,4 +1,4 @@
-"""Generate all figures; save to each project's outputs/ subfolder and optionally showcase-website/assets/."""
+"""Generate all figures; save to both github-codebase/<project>/outputs/ and showcase-website/assets/projectN/."""
 import sys
 from pathlib import Path
 import matplotlib.pyplot as plt
@@ -6,24 +6,28 @@ import matplotlib.pyplot as plt
 REPO = Path(__file__).resolve().parent.parent  # github-codebase
 ASSETS_DIR = REPO.parent / "showcase-website" / "assets"  # 209/showcase-website/assets
 
-ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+# Map script project folder -> showcase assets subfolder (project1, project2, ...)
+PROJECT_TO_ASSETS = {
+    "project1_regression": "project1",
+    "project2_flux_balance_analysis": "project2",
+    "project3_tumor_growth_ode": "project3",
+    "project4_covid19": "project4",
+    "project5_tumor_microenvironment": "project5",
+}
 
-PROJECT_NAMES = [
-    "project1_regression",
-    "project2_flux_balance_analysis",
-    "project3_tumor_growth_ode",
-    "project4_covid19",
-    "project5_tumor_microenvironment",
-]
+PROJECT_NAMES = list(PROJECT_TO_ASSETS.keys())
 for name in PROJECT_NAMES:
     sys.path.insert(0, str(REPO / name))
 
 def _save(project_name, fig_name):
+    # 1) github-codebase/<project>/outputs/
     out_dir = REPO / project_name / "outputs"
     out_dir.mkdir(parents=True, exist_ok=True)
     plt.savefig(out_dir / fig_name, dpi=150, bbox_inches="tight")
-    if ASSETS_DIR.exists():
-        plt.savefig(ASSETS_DIR / fig_name, dpi=150, bbox_inches="tight")
+    # 2) showcase-website/assets/projectN/
+    assets_sub = ASSETS_DIR / PROJECT_TO_ASSETS[project_name]
+    assets_sub.mkdir(parents=True, exist_ok=True)
+    plt.savefig(assets_sub / fig_name, dpi=150, bbox_inches="tight")
     plt.close()
 
 def main():
@@ -104,9 +108,7 @@ def main():
     plt.figure(figsize=(5,5)); ax = plt.gca(); np.random.seed(42); draw_tme(ax, R1=30, R2=80, n_immune=60)
     plt.title("Project 5 — TME single"); _save("project5_tumor_microenvironment", "fig_tme_single.png")
 
-    print("Figures saved to each project's outputs/ subfolder")
-    if ASSETS_DIR.exists():
-        print("Figures for website:", ASSETS_DIR)
+    print("Figures saved to github-codebase/<project>/outputs/ and showcase-website/assets/project1/ ... project5/")
 
 if __name__ == "__main__":
     main()

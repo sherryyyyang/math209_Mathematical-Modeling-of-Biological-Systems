@@ -11,8 +11,8 @@ Coursework from a quantitative/systems biology class, organized **by project**. 
 | [**Project 3** — Tumor growth ODE](project3_tumor_growth_ode/) | Tumor weight + drug PK | Runge–Kutta, multi-compartment ODEs |
 | [**Project 4** — COVID-19 model](project4_covid19/) | S, E, A, I, H, R, D epidemic dynamics | ODE integration, R₀, intervention (δ) |
 | [**Project 5** — Tumor microenvironment](project5_tumor_microenvironment/) | Effector T cells, macrophages, spatial R2 | Parameterized geometry, visualization |
-| [**Project 6**](project6/) | Report PDF only (no code in repo) | Figures in `outputs/` |
-| [**Project 7**](project7/) | Report PDF only (no code in repo) | Figures in `outputs/` |
+| [**Project 6**](project6/) | Report PDF only (no code in repo) | `project6.pdf` in folder |
+| [**Project 7**](project7/) | Report PDF only (no code in repo) | `project7.pdf` in folder |
 
 ## Repository structure
 
@@ -20,7 +20,7 @@ Coursework from a quantitative/systems biology class, organized **by project**. 
 ├── README.md
 ├── requirements.txt
 ├── project1_regression/
-│   └── outputs/          # figures (from report PDF or generated)
+│   └── outputs/          # figures (same set as ../showcase-website/assets/project1/)
 ├── project2_flux_balance_analysis/
 │   └── outputs/
 ├── project3_tumor_growth_ode/
@@ -30,19 +30,20 @@ Coursework from a quantitative/systems biology class, organized **by project**. 
 ├── project5_tumor_microenvironment/
 │   └── outputs/
 ├── project6/
-│   └── outputs/
+│   └── project6.pdf      # report only (no outputs/)
 ├── project7/
-│   └── outputs/
+│   └── project7.pdf      # report only (no outputs/)
 └── scripts/
     ├── generate_figures.py      # regenerate from code (Projects 1–5)
-    └── extract_figures_from_pdfs.py   # copy figures from report PDFs (all 7)
+    └── extract_figures_from_pdfs.py  # extract from PDFs (Projects 1–5; PDFs not in repo)
 ```
 
-**Figures:** For report-accurate figures (matching the submitted PDFs), run from the repo root:
+**Figures:** Figures are kept in both **`<project>/outputs/`** and **`../showcase-website/assets/project1/` … `project5/`**. Run:
 ```bash
-python scripts/extract_figures_from_pdfs.py
+python scripts/generate_figures.py
 ```
-Requires `poppler-utils` (e.g. `brew install poppler`). This extracts figures from `project1.pdf`–`project7.pdf` in the parent folder into each project’s `outputs/`. Use `generate_figures.py` only when you want to regenerate plots from code and have the same data.
+That writes to each project’s `outputs/` and to the showcase assets. For PDF extraction, run `extract_figures_from_pdfs.py` (expects `project1.pdf`–`project5.pdf` in parent folder). Requires `poppler-utils` (e.g. `brew install poppler`).
+
 
 ## Setup and run
 

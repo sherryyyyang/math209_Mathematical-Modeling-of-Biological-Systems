@@ -19,5 +19,10 @@ env/
 *.swp
 *.swo
 
-# Optional: uncomment to avoid committing large PDFs
-# *.pdf
+# Unpublished report PDFs (projects 1–5 only; 6 & 7 are in project folders)
+project1.pdf
+project2.pdf
+project3.pdf
+project4.pdf
+project5.pdf
+

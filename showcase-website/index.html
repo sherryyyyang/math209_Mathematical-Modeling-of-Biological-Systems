@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sherry Yang — Quantitative Biology & Systems Modeling</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Quantitative Biology &amp; Systems Modeling</h1>
+      <p class="tagline">Sherry Yang — regression, metabolic networks, ODEs, epidemics &amp; tumor microenvironment</p>
+      <a href="#projects" class="cta">View projects</a>
+      <a href="#all-figures" class="cta cta-secondary">All figures</a>
+    </div>
+    <div class="hero-visual">
+      <img src="assets/fig_tumor_growth.png" alt="Tumor growth under different drug doses (D=0, 45, 60)" class="hero-fig" />
+    </div>
+  </header>
+
+  <main id="projects" class="projects">
+    <section class="project-card" data-theme="warm">
+      <div class="card-content">
+        <h2>Project 1 — Regression &amp; model comparison</h2>
+        <p>Linear, quadratic, and exponential fits to time-series data; R² and least-squares. Applied to biomass and growth curves.</p>
+        <ul class="skills">
+          <li>Least squares</li>
+          <li>R²</li>
+          <li>Model selection</li>
+        </ul>
+      </div>
+      <div class="card-visual">
+        <img src="assets/fig_regression.png" alt="Regression: linear, quadratic, exponential fits" />
+      </div>
+      <div class="card-figures">
+        <img src="assets/fig_regression_linear.png" alt="Linear fit" />
+        <img src="assets/fig_regression_quadratic.png" alt="Quadratic fit" />
+        <img src="assets/fig_regression_exponential.png" alt="Exponential fit" />
+      </div>
+    </section>
+
+    <section class="project-card" data-theme="cool">
+      <div class="card-content">
+        <h2>Project 2 — Flux balance analysis</h2>
+        <p>Maximize biomass subject to stoichiometric balance S·v = 0. E. coli core–style metabolism; aerobic vs anaerobic and knockout sensitivity.</p>
+        <ul class="skills">
+          <li>Linear programming</li>
+          <li>Stoichiometric matrix</li>
+          <li>FBA</li>
+        </ul>
+      </div>
+      <div class="card-visual">
+        <img src="assets/fig_fba.png" alt="Flux balance analysis: knockout sensitivity" />
+      </div>
+    </section>
+
+    <section class="project-card" data-theme="warm">
+      <div class="card-content">
+        <h2>Project 3 — Tumor growth ODE</h2>
+        <p>Multi-compartment tumor model with drug PK. Runge–Kutta integration; tumor weight vs time under different doses.</p>
+        <ul class="skills">
+          <li>ODE systems</li>
+          <li>RK4 / numerical integration</li>
+          <li>Pharmacokinetics</li>
+        </ul>
+      </div>
+      <div class="card-visual">
+        <img src="assets/fig_tumor_growth.png" alt="Tumor growth under different drug doses" />
+      </div>
+    </section>
+
+    <section class="project-card" data-theme="cool">
+      <div class="card-content">
+        <h2>Project 4 — COVID-19 compartmental model</h2>
+        <p>SEIR-type dynamics: S, E, A, I, H, R, D. R₀ and intervention (contact reduction); hospitalization and cumulative deaths.</p>
+        <ul class="skills">
+          <li>Epidemic modeling</li>
+          <li>R₀</li>
+          <li>Compartments</li>
+        </ul>
+      </div>
+      <div class="card-visual">
+        <img src="assets/fig_covid19_baseline.png" alt="COVID-19 model: compartments, deaths, cases, hospitalizations" />
+      </div>
+      <div class="card-figures">
+        <img src="assets/fig_covid19.png" alt="Compartments over time" />
+        <img src="assets/fig_covid19_delta.png" alt="Effect of contact reduction (delta)" />
+      </div>
+    </section>
+
+    <section class="project-card" data-theme="accent">
+      <div class="card-content">
+        <h2>Project 5 — Tumor microenvironment</h2>
+        <p>Spatial layout of cancer cells, effector T cells, and macrophages. Parameter R2 (outer radius) tunes immune cell distribution to capture different TME phenotypes.</p>
+        <ul class="skills">
+          <li>Spatial modeling</li>
+          <li>Immune infiltration</li>
+          <li>Parameterized geometry</li>
+        </ul>
+      </div>
+      <div class="card-visual">
+        <img src="assets/fig_tme_single.png" alt="TME: cancer core and immune annulus" />
+      </div>
+      <div class="card-figures">
+        <img src="assets/fig_tme.png" alt="Tumor microenvironment: effect of R2 (400, 500, 600)" />
+      </div>
+    </section>
+  </main>
+
+  <section class="gallery" id="all-figures">
+    <h2>All figures</h2>
+    <p class="gallery-intro">Generated from the project code. Run <code>python scripts/generate_figures.py</code> in the repo to regenerate.</p>
+    <div class="gallery-grid">
+      <figure><img src="assets/fig_regression.png" alt="Regression combined" /><figcaption>Project 1 — Regression (combined)</figcaption></figure>
+      <figure><img src="assets/fig_regression_linear.png" alt="Linear fit" /><figcaption>Project 1 — Linear</figcaption></figure>
+      <figure><img src="assets/fig_regression_quadratic.png" alt="Quadratic fit" /><figcaption>Project 1 — Quadratic</figcaption></figure>
+      <figure><img src="assets/fig_regression_exponential.png" alt="Exponential fit" /><figcaption>Project 1 — Exponential</figcaption></figure>
+      <figure><img src="assets/fig_fba.png" alt="FBA" /><figcaption>Project 2 — FBA knockouts</figcaption></figure>
+      <figure><img src="assets/fig_tumor_growth.png" alt="Tumor growth" /><figcaption>Project 3 — Tumor growth</figcaption></figure>
+      <figure><img src="assets/fig_covid19.png" alt="COVID compartments" /><figcaption>Project 4 — COVID compartments</figcaption></figure>
+      <figure><img src="assets/fig_covid19_baseline.png" alt="COVID baseline 4-panel" /><figcaption>Project 4 — COVID baseline (4-panel)</figcaption></figure>
+      <figure><img src="assets/fig_covid19_delta.png" alt="COVID delta" /><figcaption>Project 4 — COVID delta</figcaption></figure>
+      <figure><img src="assets/fig_tme_single.png" alt="TME single" /><figcaption>Project 5 — TME single</figcaption></figure>
+      <figure><img src="assets/fig_tme.png" alt="TME R2" /><figcaption>Project 5 — TME R2 comparison</figcaption></figure>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Built from coursework in quantitative &amp; systems biology. Code on <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>.</p>
+  </footer>
+</body>
+</html>
